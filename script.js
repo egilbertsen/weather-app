@@ -1,13 +1,21 @@
 
-$("#searchButton").on("click", function(){
-    event.preventDefault();
-    searchCity()
-})
 
 var userInputCity;
 var userInputState;
 var removedSpacesCity;
 var removedSpacesState;
+
+
+$("#searchButton").on("click", function(){
+    event.preventDefault();
+    searchCity()
+    clearOldSearch()
+})
+
+function clearOldSearch() {
+    $(".days").html("");
+    $(".current-day").html(""); 
+}
 
 
 function searchCity() {
@@ -19,35 +27,26 @@ function searchCity() {
     previousSearches.splice(0, 1, {city: userInputCity, state: userInputState});
         
     renderPreviousSearches();
-    onLoad();
+    writeCurrentDate();
     init();
 }
 
 
-
-
-function onLoad() {
-    var currentDateStr = moment().format('dddd, MMMM Do');
-    $("#currentDate").val("");
-
-    $("#currentDate").append(currentDateStr, " --- ", userInputCity)
-}
-
 var previousSearches = [];
 
 function renderPreviousSearches() {
+    $("#recent-searches").html("");
+
     var recentSearchesContainer = $("#recent-searches")
 
 
-  recentSearchesContainer.innerHTML = "";
+    for (var i = 0; i < previousSearches.length; i++) {
+        var previousSearch = previousSearches[i];
 
-  for (var i = 0; i < previousSearches.length; i++) {
-    var previousSearch = previousSearches[i];
-
-    var li = document.createElement("li");
-    li.textContent = previousSearch.city + ", " + previousSearch.state;
-    recentSearchesContainer.append(li);
-  }
+        var li = document.createElement("li");
+        li.textContent = previousSearch.city + ", " + previousSearch.state;
+        recentSearchesContainer.append(li);
+    }
 }
 
 function init() {
@@ -68,6 +67,12 @@ function storeSearches() {
   localStorage.setItem("prevsearch", JSON.stringify(previousSearches));
 }
 
+
+function writeCurrentDate() {
+    $("#currentDate").html("");
+    var currentDateStr = moment().format('dddd, MMMM Do');
+    $("#currentDate").append(currentDateStr, " --- ", userInputCity);
+}
 
 function generateOWURL() {
     var openWURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + removedSpacesCity + "," + removedSpacesState + "&appid=a45736dce96af4ff411de1c549396bc3"
