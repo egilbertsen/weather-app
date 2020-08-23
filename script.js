@@ -5,6 +5,9 @@ var userInputState;
 var removedSpacesCity;
 var removedSpacesState;
 
+var previousSearches = [];
+
+
 
 $("#searchButton").on("click", function(){
     event.preventDefault();
@@ -18,21 +21,23 @@ function clearOldSearch() {
 }
 
 
+
 function searchCity() {
     userInputCity = $("#city").val();
     userInputState = $("#state").val();
     removedSpacesCity = userInputCity.split(" ").join("");
     removedSpacesState =  userInputState.split(" ").join("");
         
-    previousSearches.splice(0, 1, {city: userInputCity, state: userInputState});
-        
+    previousSearches.unshift({city: userInputCity, state: userInputState});
+    
     renderPreviousSearches();
     writeCurrentDate();
     init();
+    storeSearches();
 }
 
 
-var previousSearches = [];
+
 
 function renderPreviousSearches() {
     $("#recent-searches").html("");
@@ -42,7 +47,6 @@ function renderPreviousSearches() {
 
     for (var i = 0; i < previousSearches.length; i++) {
         var previousSearch = previousSearches[i];
-
         var li = document.createElement("li");
         li.textContent = previousSearch.city + ", " + previousSearch.state;
         recentSearchesContainer.append(li);
@@ -154,15 +158,15 @@ function generateOWURL() {
             var currentUVDisp = document.createElement("p");
             currentUVDisp.textContent = currentUVStr;
             if (currentUV < 3) {
-                $(this).css("background-color", "green");
+                $(currentUVDisp).css("backgroundColor", "green");
             } else if (3 <= currentUV < 6){
-                $(this).css("background-color", "yellow");
+                $(currentUVDisp).css("backgroundColor", "yellow");
             } else if (6 <= currentUV < 8){
-                $(this).css("background-color", "orange");
+                $(currentUVDisp).css("backgroundColor", "orange");
             } else if (8 <= currentUV < 10){
-                $(this).css("background-color", "red");
+                $(currentUVDisp).css("backgroundColor", "red");
             } else if (10 <= currentUV){
-                $(this).css("background-color", "purple");
+                $(currentUVDisp).css("backgroundColor", "purple");
             }
 
             var currentWindSpeed = response.current.wind_speed
