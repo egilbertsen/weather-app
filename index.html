@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+     crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,500&display=swap" 
+      rel="stylesheet">
+     <link rel = "stylesheet" href="style.css">
+    <title>Weather-or-Not</title>
+</head>
+<body>
+    <nav class="navbar d-flex justify-content-end">
+        <form class="form d-flex justify-content-end">  
+            <div class="mb-3">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" placeholder="Take me away...">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="state">State</label>
+                <select class="custom-select d-block w-100" id="state">
+                    <option value="">Select...</option>
+                    <option class="dropdown-item">Alabama</option>
+                    <option class="dropdown-item">Alaska</option>
+                    <option class="dropdown-item">Arizona</option>
+                    <option class="dropdown-item">Arkansas</option>
+                    <option class="dropdown-item">California</option>
+                    <option class="dropdown-item">Colorado</option>
+                    <option class="dropdown-item">Connecticut</option>
+                    <option class="dropdown-item">Delaware</option>
+                    <option class="dropdown-item">Florida</option>
+                    <option class="dropdown-item">Georgia</option>
+                    <option class="dropdown-item">Hawaii</option>
+                    <option class="dropdown-item">Idaho</option>
+                    <option class="dropdown-item">Illinois</option>
+                    <option class="dropdown-item">Indiana</option>
+                    <option class="dropdown-item">Iowa</option>
+                    <option class="dropdown-item">Kansas</option>
+                    <option class="dropdown-item">Kentucky</option>
+                    <option class="dropdown-item">Louisiana</option>
+                    <option class="dropdown-item">Maine</option>
+                    <option class="dropdown-item">Maryland</option>
+                    <option class="dropdown-item">Massachusetts</option>
+                    <option class="dropdown-item">Michigan</option>
+                    <option class="dropdown-item">Minnesota</option>
+                    <option class="dropdown-item">Mississippi</option>
+                    <option class="dropdown-item">Missouri</option>
+                    <option class="dropdown-item">Montana</option>
+                    <option class="dropdown-item">Nebraska</option>
+                    <option class="dropdown-item">Nevada</option>
+                    <option class="dropdown-item">New Hampshire</option>
+                    <option class="dropdown-item">New Jersey</option>
+                    <option class="dropdown-item">New Mexico</option>
+                    <option class="dropdown-item">New York</option>
+                    <option class="dropdown-item">North Carolina</option>
+                    <option class="dropdown-item">North Dakota</option>
+                    <option class="dropdown-item">Ohio</option>
+                    <option class="dropdown-item">Oklahoma</option>
+                    <option class="dropdown-item">Oregon</option>
+                    <option class="dropdown-item">Pennsylvania</option>
+                    <option class="dropdown-item">Rhode Island</option>
+                    <option class="dropdown-item">South Carolina</option>
+                    <option class="dropdown-item">South Dakota</option>
+                    <option class="dropdown-item">Tennessee</option>
+                    <option class="dropdown-item">Texas</option>
+                    <option class="dropdown-item">Utah</option>
+                    <option class="dropdown-item">Vermont</option>
+                    <option class="dropdown-item">Virginia</option>
+                    <option class="dropdown-item">Washington</option>
+                    <option class="dropdown-item">West Virginia</option>
+                    <option class="dropdown-item">Wisconsin</option>
+                    <option class="dropdown-item">Wyoming</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <button class="btn" id = "searchButton" type="submit">Search</button>
+            </div>
+        </form>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Weather-or-Not</h1>
+          <p class="lead" id="currentDate"></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class = "col-md-8 current-day"> 
+                <h3>The Day Ahead:</h3>
+            </div>
+            <div class = "col-md-4"><h5>Recent Searches:</h5>
+            <div id = "recent-searches"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class = "5-day-forecast col-md-12">
+                <div class = "row">
+                    <div class="col-md-12"><h3>The Next Five Days:</h3></div>
+                </div>
+                <div class ="row">
+                    <div class="col-md-2 days">
+                    </div>
+                    <div class="col-md-2 days">
+                    </div>
+                    <div class="col-md-2 days">
+                    </div>
+                    <div class="col-md-2 days">
+                    </div>
+                    <div class="col-md-2 days">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
