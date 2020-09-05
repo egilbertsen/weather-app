@@ -7,9 +7,17 @@
      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
      crossorigin="anonymous">
-     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,500&display=swap" 
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,500&display=swap" 
       rel="stylesheet">
-     <link rel = "stylesheet" href="style.css">
+    <link href="css/owfont-regular.css" rel="stylesheet" type="text/css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel = "stylesheet" href="css/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <title>Weather-or-Not</title>
 </head>
 <body>
@@ -88,10 +96,19 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class = "col-md-8 current-day"> 
-                <h3>The Day Ahead:</h3>
+            <div class = "col-md-10"> 
+                <div class = "row">
+                    <h3>The Day Ahead:</h3>
+                </div>
+                <div class = "row">
+                    <div class = "col-md-5 currentSymbol dashed-right cntr"></div>
+                    <div class = "col-md-5 currentTemp cntr"></div>
+                </div>
+                <div class = "row hidden" id = "tempChart"></div>
+                <div class = "current-day"></div>
+                
             </div>
-            <div class = "col-md-4"><h5>Recent Searches:</h5>
+            <div class = "col-md-2"><h5>Recent Searches:</h5>
             <div id = "recent-searches"></div>
             </div>
         </div>
@@ -120,6 +137,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

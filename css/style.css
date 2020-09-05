@@ -1,0 +1,67 @@
+body {
+    font-family: 'EB Garamond', serif;
+    background-color: white;
+}
+
+.previous-searches:hover {
+    font-style: italic;
+}
+
+.jumbotron {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    background-color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: white;
+    border: none;
+    color: grey;
+}
+
+button:hover {
+    color: black;
+}
+.row {
+    margin: 10px;
+    padding: 3 px;
+}
+
+.cntr {
+    text-align: center;
+}
+
+/* .days {
+    text-align: center;
+} */
+.description {
+    font-style: italic;
+    font-size: 15px;
+}
+
+.tempBig {
+    font-size: 50px;
+}
+
+.current-day {
+    font-size: 20px;
+}
+
+.uv-desc {
+    display: inline-block;
+    font-style: italic;
+}
+
+h3 {
+    font-style: italic;
+}
+
+.dashed-right {
+    border-style: none double none none;
+}
+
+
