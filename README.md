@@ -1,8 +1,12 @@
-# weather-app
-Simple weather app with 5 day forecast
+# weather-or-not
+Minimalist weather app that provides a 5 day forecast, 24hr temp charting, and current conditions. 
 
 ## Technologies Used
-
+ * Plot.ly
+ * Bootstrap
+ * jQuery
+ * local storage
+ 
 ## App Screenshots
 
 The app has the following user interfaces:
