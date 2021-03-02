@@ -7,9 +7,9 @@ Simple weather app with 5 day forecast
 
 The app has the following user interfaces:
 
-  * Header and results when a user searches a given city: ![Basic Weather Page](media/header-and-today)
-  * 5 day forecast results: ![5 Day Forecast](media/5day-forecast)
-  * Temperatures for the next 24hrs are charted on a dropdown element: ![24 hour chart](media/24hr-dropdown)
+  * Header and results when a user searches a given city: ![Basic Weather Page](media/header-and-today.png)
+  * 5 day forecast results: ![5 Day Forecast](media/5day-forecast.png)
+  * Temperatures for the next 24hrs are charted on a dropdown element: ![24 hour chart](media/24hr-dropdown.png)
 
 ## User Story
 
